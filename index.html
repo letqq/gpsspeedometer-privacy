@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - GPS Speedometer</title>
+<style>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    color: #222;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+h1 {
+    font-size: 1.5rem;
+    color: #00897b;
+    margin-bottom: 4px;
+}
+h2 {
+    font-size: 1.1rem;
+    margin-top: 32px;
+    margin-bottom: 8px;
+}
+p {
+    margin: 10px 0;
+}
+ul {
+    margin: 8px 0 12px 20px;
+}
+li {
+    margin: 5px 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.92rem;
+}
+th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: top;
+}
+th {
+    background: #f4f4f4;
+}
+td:first-child {
+    font-family: Consolas, monospace;
+    font-size: 0.82rem;
+    color: #00897b;
+}
+a {
+    color: #00897b;
+}
+.date {
+    color: #888;
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+    body { padding: 24px 16px; }
+    td:first-child { font-size: 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>GPS Speedometer</h1>
+<p class="date">Privacy Policy - Updated August 31, 2026</p>
+
+<p>This policy describes how GPS Speedometer handles your data. The app does not collect, transmit, or sell personal information. Everything stays on your device unless you choose to export it.</p>
+
+<h2>Location</h2>
+<p>Location data is used only while a trip is running to calculate speed, distance, and route. The app does not access your location when no trip is active. This data is saved locally with the trip record and never sent to any server.</p>
+
+<h2>Weather</h2>
+<p>When the weather feature is enabled, the app sends your current coordinates to a weather service to fetch local conditions. This is the only case where your approximate location leaves the device. The request contains only latitude and longitude - no identifiers, no trip data, no personal information. The app uses <a href="https://open-meteo.com">Open-Meteo</a> as the primary provider and <a href="https://api.met.no">MET Norway</a> as a fallback. Both are free, open, and do not require an API key or user account. You can disable the weather feature at any time in Settings.</p>
+
+<h2>Heart Rate &amp; Calories</h2>
+<p>If you enable the heart rate feature in Settings, the app can read heart rate and calorie data from Health Connect. This data comes from your watch or fitness band and is stored only with the related trip on your device. You can disable this feature or revoke the permission at any time.</p>
+
+<h2>Trip History</h2>
+<p>Recorded trips are stored in a local database on your device. Trips never leave your device unless you export them yourself as GPX files.</p>
+
+<h2>Settings</h2>
+<p>Your settings and preferences are stored locally using Android DataStore. They may be included in Android's automatic backup if you have that enabled. The app does not transmit them.</p>
+
+<h2>What the App Does Not Do</h2>
+<ul>
+<li>No accounts, email addresses, or phone numbers</li>
+<li>No advertising identifiers or ad SDKs</li>
+<li>No analytics, telemetry, or third-party crash reporting</li>
+<li>No third-party SDKs that send personal data</li>
+</ul>
+
+<h2>Network Use</h2>
+<p>The app makes two types of network requests:</p>
+<ul>
+<li><strong>Map tiles</strong> - requested from the VersaTiles public tile service, or from a custom URL you can set in Settings. These requests contain only the geographic area visible on the map. They do not include any user or device identifiers.</li>
+<li><strong>Weather data</strong> - when the weather feature is on, the app requests current conditions from Open-Meteo or MET Norway using your coordinates. See the Weather section above.</li>
+</ul>
+
+<h2>Data Storage</h2>
+<ul>
+<li>Trips, waypoints, and map pins: local database (app-private storage)</li>
+<li>Settings: local Android DataStore</li>
+<li>Heart rate samples: stored with the related trip in the local database</li>
+</ul>
+<p>Android auto-backup may include this data if you have it enabled. Google's backup is end-to-end encrypted.</p>
+
+<h2>Deleting Your Data</h2>
+<ul>
+<li>Single trip: open it in History and delete it</li>
+<li>All trips: Settings &gt; Data &gt; Delete all trips</li>
+<li>All map pins: Settings &gt; Data &gt; Delete all map pins</li>
+<li>Everything: Settings &gt; Data &gt; Delete everything, or uninstall the app</li>
+<li>Heart rate data: turn the feature off in Settings; existing samples are deleted with their trip</li>
+</ul>
+
+<h2>Permissions</h2>
+<table>
+<tr><th>Permission</th><th>Reason</th></tr>
+<tr><td>ACCESS_FINE_LOCATION</td><td>Speed, distance, and route while a trip is running</td></tr>
+<tr><td>ACCESS_COARSE_LOCATION</td><td>Fallback when fine location is unavailable</td></tr>
+<tr><td>FOREGROUND_SERVICE_LOCATION</td><td>Keep trip recording alive in background</td></tr>
+<tr><td>POST_NOTIFICATIONS</td><td>Trip-in-progress notification (Android 13+)</td></tr>
+<tr><td>SYSTEM_ALERT_WINDOW</td><td>Optional floating speed gauge</td></tr>
+<tr><td>RECEIVE_BOOT_COMPLETED</td><td>Restart keepalive worker after reboot</td></tr>
+<tr><td>WAKE_LOCK, VIBRATE</td><td>Keep device awake during tracking; vibrate on speed warnings</td></tr>
+<tr><td>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</td><td>Optional, prevents system from killing long trips</td></tr>
+<tr><td>health.READ_HEART_RATE + related</td><td>Optional, read heart rate and calories via Health Connect</td></tr>
+</table>
+
+<h2>Children</h2>
+<p>This app is intended for users 18 and older. It does not collect data from anyone, including children. There are no accounts, no messaging, and no content shared with other users.</p>
+
+<h2>Changes</h2>
+<p>If data practices change, this policy will be updated and the date at the top will reflect the change.</p>
+
+<h2>Contact</h2>
+<p>This is an independent app by vifo devs. For questions about this policy, contact <a href="mailto:letq@proton.me">letq@proton.me</a>.</p>
+
+</body>
+</html>
