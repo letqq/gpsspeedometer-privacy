@@ -70,15 +70,21 @@ a {
 <body>
 
 <h1>GPS Speedometer</h1>
-<p class="date">Privacy Policy - Updated September 16, 2026</p>
+<p class="date">Privacy Policy - Updated October 7, 2026</p>
 
-<p>This policy describes how GPS Speedometer handles your data. The app does not collect, transmit, or sell personal information. Everything stays on your device unless you choose to export it.</p>
+<p>This policy describes how GPS Speedometer handles your data. The app has no accounts and no servers of its own, and it does not sell personal information. Your data stays on your device unless you export it. A few optional features contact public third-party services with approximate coordinates; these are listed in the sections below, and each can be turned off.</p>
 
 <h2>Location</h2>
-<p>Location data is used only while a trip is running to calculate speed, distance, and route. The app does not access your location when no trip is active. This data is saved locally with the trip record and never sent to any server.</p>
+<p>Location is used to calculate speed, distance, and route while a trip is running. While the app is open it is also used to show your position on the map and, if those features are on, to look up weather and speed limits (see below). Trip routes are saved locally with the trip record and are never sent to any server. Only the approximate coordinates described in the Weather, Speed Limit Sign, and Map sections leave your device.</p>
 
 <h2>Weather</h2>
-<p>When the weather feature is enabled, the app sends your current coordinates to a weather service to fetch local conditions. This is the only case where your approximate location leaves the device. The request contains only latitude and longitude - no identifiers, no trip data, no personal information. The app uses <a href="https://open-meteo.com">Open-Meteo</a> as the primary provider and <a href="https://api.met.no">MET Norway</a> as a fallback. Both are free, open, and do not require an API key or user account. You can disable the weather feature at any time in Settings.</p>
+<p>When the weather feature is enabled, the app sends your current coordinates to a weather service to fetch local conditions. The request contains only latitude and longitude - no identifiers, no trip data, no personal information. The app uses <a href="https://open-meteo.com">Open-Meteo</a> as the primary provider and <a href="https://api.met.no">MET Norway</a> as a fallback. Both are free, open, and do not require an API key or user account. You can disable the weather feature at any time in Settings.</p>
+
+<h2>Speed Limit Sign</h2>
+<p>When the speed limit sign is enabled, the app asks a public OpenStreetMap data service (<a href="https://overpass-api.de">Overpass API</a>, with <a href="https://overpass.private.coffee">overpass.private.coffee</a> and <a href="https://maps.mail.ru/osm/tools/overpass/">maps.mail.ru</a> as fallbacks) for the posted speed limit of nearby roads. The request contains only your approximate coordinates, rounded to a grid of about 100 meters. It contains no identifiers and no trip data. Results are cached on the device to keep requests few. These services are operated by third parties and can see your IP address like any web server. You can turn the sign off at any time in Settings.</p>
+
+<h2>Place Names</h2>
+<p>To show a place name for a trip, the app may use Android's built-in geocoder. On most devices this is a system service that can send the coordinates to the device manufacturer's or Google's location service. It is not run by this app, and it is used only when you view a trip.</p>
 
 <h2>Heart Rate &amp; Calories</h2>
 <p>If you enable the heart rate feature in Settings, the app can read heart rate and calorie data from Health Connect. This data comes from your watch or fitness band and is stored only with the related trip on your device. You can disable this feature or revoke the permission at any time.</p>
@@ -98,10 +104,12 @@ a {
 </ul>
 
 <h2>Network Use</h2>
-<p>The app makes two types of network requests:</p>
+<p>The app makes the following network requests, and no others:</p>
 <ul>
 <li><strong>Map tiles</strong> - requested from the VersaTiles public tile service. These requests contain only the geographic area visible on the map. They do not include any user or device identifiers.</li>
+<li><strong>Satellite imagery</strong> - if you choose the satellite map style, tiles are requested from Esri's ArcGIS World Imagery service, again only for the visible area.</li>
 <li><strong>Weather data</strong> - when the weather feature is on, the app requests current conditions from Open-Meteo or MET Norway using your coordinates. See the Weather section above.</li>
+<li><strong>Speed limits</strong> - when the speed limit sign is on, the app queries Overpass API servers with approximate coordinates. See the Speed Limit Sign section above.</li>
 </ul>
 
 <h2>Data Storage</h2>
@@ -126,10 +134,12 @@ a {
 <tr><th>Permission</th><th>Reason</th></tr>
 <tr><td>ACCESS_FINE_LOCATION</td><td>Speed, distance, and route while a trip is running</td></tr>
 <tr><td>ACCESS_COARSE_LOCATION</td><td>Fallback when fine location is unavailable</td></tr>
-<tr><td>FOREGROUND_SERVICE_LOCATION</td><td>Keep trip recording alive in background</td></tr>
+<tr><td>FOREGROUND_SERVICE, FOREGROUND_SERVICE_LOCATION</td><td>Keep trip recording alive in background</td></tr>
 <tr><td>POST_NOTIFICATIONS</td><td>Trip-in-progress notification (Android 13+)</td></tr>
+<tr><td>POST_PROMOTED_NOTIFICATIONS</td><td>Optional, show trip status as a promoted live notification (Android 16+)</td></tr>
+<tr><td>INTERNET, ACCESS_NETWORK_STATE</td><td>Map tiles, weather, and speed limit requests (see Network Use)</td></tr>
 <tr><td>SYSTEM_ALERT_WINDOW</td><td>Optional floating speed gauge</td></tr>
-<tr><td>RECEIVE_BOOT_COMPLETED</td><td>Restart keepalive worker after reboot</td></tr>
+<tr><td>FLASHLIGHT</td><td>Optional, flashlight control from the app</td></tr>
 <tr><td>WAKE_LOCK, VIBRATE</td><td>Keep device awake during tracking; vibrate on speed warnings</td></tr>
 <tr><td>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</td><td>Optional, prevents system from killing long trips</td></tr>
 <tr><td>health.READ_HEART_RATE + related</td><td>Optional, read heart rate and calories via Health Connect</td></tr>
