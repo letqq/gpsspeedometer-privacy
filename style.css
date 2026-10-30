@@ -1,0 +1,152 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4fbf9;
+  --fg: #101e1c;
+  --fgv: #3f4f4c;
+  --pr: #00796b;
+  --onpr: #ffffff;
+  --prc: #b2dfdb;
+  --onprc: #00201c;
+  --ol: #6f7977;
+  --olv: #bfc9c6;
+  --line: #d9e1df;
+  --ibox: #dceeeb;
+  --iglyph: #168578;
+  --fg-rgb: 16, 30, 28;
+  --onprc-rgb: 0, 32, 28;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1514;
+    --fg: #dde4e2;
+    --fgv: #bec9c6;
+    --pr: #4db6ac;
+    --onpr: #003731;
+    --prc: #00504a;
+    --onprc: #b2dfdb;
+    --ol: #899390;
+    --olv: #3f4947;
+    --line: #272e2d;
+    --ibox: #142523;
+    --iglyph: #47a89e;
+    --fg-rgb: 221, 228, 226;
+    --onprc-rgb: 178, 223, 219;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 17px/1.6 Roboto, "Noto Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+
+header {
+  padding-bottom: 20px;
+  margin-bottom: 8px;
+  border-bottom: 3px solid var(--prc);
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.meta {
+  margin: 8px 0 0;
+  font-size: 15px;
+  color: var(--fgv);
+}
+
+h2 {
+  margin: 36px 0 0;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+p {
+  margin: 10px 0 0;
+}
+
+a {
+  color: var(--fg);
+  text-underline-offset: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--pr);
+  outline-offset: 2px;
+}
+
+ul {
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+
+li {
+  margin: 6px 0 0;
+  padding-left: 2px;
+}
+
+li::marker {
+  color: var(--fgv);
+}
+
+strong {
+  font-weight: 600;
+}
+
+dl {
+  margin: 12px 0 0;
+}
+
+.perm {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.perm:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+dt {
+  font: 500 14px/1.4 ui-monospace, "Roboto Mono", Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
+dd {
+  margin: 2px 0 0;
+  font-size: 16px;
+}
+
+@media (min-width: 560px) {
+  .perm {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 16px;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
