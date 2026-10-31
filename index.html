@@ -14,103 +14,142 @@
 <main>
 <header>
 <h1>Privacy Policy</h1>
-<p class="meta">Updated October 7, 2026 · <a href="ru/" hreflang="ru">Русский</a></p>
+<p class="meta">Updated October 31, 2026 · <a href="ru/" hreflang="ru">Русский</a></p>
 </header>
 
-<p>This policy describes how GPS Speedometer handles your data. The app has no accounts and no servers of its own, and it does not sell personal information. Your data stays on your device unless you export it. A few optional features contact public third-party services with approximate coordinates; these are listed in the sections below, and each can be turned off.</p>
+<p>Welcome to GPS Speedometer! This Privacy Policy explains how letqq ("we", "us", or "our") handles information when you use the GPS Speedometer mobile application (the "Service"). The app has no accounts, no analytics, and no advertising. Your trips, routes, and settings stay on your device unless you export or share them. A few optional features contact other services with coordinates, and the optional one-time purchase involves a license server run by the developer and a payment provider.</p>
 
 <section>
-<h2>Location</h2>
-<p>Location is used to calculate speed, distance, and route while a trip is running. While the app is open it is also used to show your position on the map and, if those features are on, to look up weather and speed limits (see below). Trip routes are saved locally with the trip record and are never sent to any server. Only the approximate coordinates described in the Weather, Speed Limit Sign, and Map sections leave your device.</p>
-</section>
-<section>
-<h2>Weather</h2>
-<p>When the weather feature is enabled, the app sends your current coordinates to a weather service to fetch local conditions. The request contains only latitude and longitude - no identifiers, no trip data, no personal information. The app uses <a href="https://open-meteo.com">Open-Meteo</a> as the primary provider and <a href="https://api.met.no">MET Norway</a> as a fallback. Both are free, open, and do not require an API key or user account. You can disable the weather feature at any time in Settings.</p>
-</section>
-<section>
-<h2>Speed Limit Sign</h2>
-<p>When the speed limit sign is enabled, the app asks a public OpenStreetMap data service (<a href="https://overpass-api.de">Overpass API</a>, with <a href="https://overpass.private.coffee">overpass.private.coffee</a> and <a href="https://maps.mail.ru/osm/tools/overpass/">maps.mail.ru</a> as fallbacks) for the posted speed limit of nearby roads. The request contains only your approximate coordinates, rounded to a grid of about 100 meters. It contains no identifiers and no trip data. Results are cached on the device to keep requests few. These services are operated by third parties and can see your IP address like any web server. You can turn the sign off at any time in Settings.</p>
-</section>
-<section>
-<h2>Place Names</h2>
-<p>To show a place name for a trip, the app may use Android's built-in geocoder. On most devices this is a system service that can send the coordinates to the device manufacturer's or Google's location service. It is not run by this app, and it is used only when you view a trip.</p>
-</section>
-<section>
-<h2>Heart Rate &amp; Calories</h2>
-<p>If you enable the heart rate feature in Settings, the app can read heart rate and calorie data from Health Connect. This data comes from your watch or fitness band and is stored only with the related trip on your device. You can disable this feature or revoke the permission at any time.</p>
-</section>
-<section>
-<h2>Trip History</h2>
-<p>Recorded trips are stored in a local database on your device. Trips never leave your device unless you export them yourself as GPX files.</p>
-</section>
-<section>
-<h2>Settings</h2>
-<p>Your settings and preferences are stored locally using Android DataStore. They may be included in Android's automatic backup if you have that enabled. The app does not transmit them.</p>
-</section>
-<section>
-<h2>What the App Does Not Do</h2>
+<h2>1. Information We Process</h2>
+<h3>a) Location Data (Precise)</h3>
+<p><strong>Purpose:</strong> The core of the Service is your device's precise location. We use it to calculate speed, distance, and route while a trip is running, to show your position on the map, and, if those features are on, to fetch weather and speed limits.</p>
+<p><strong>Processing &amp; Sharing:</strong></p>
 <ul>
-<li>No accounts, email addresses, or phone numbers</li>
-<li>No advertising identifiers or ad SDKs</li>
-<li>No analytics, telemetry, or third-party crash reporting</li>
-<li>No third-party SDKs that send personal data</li>
+<li><strong>Local use:</strong> speed, distance, and routes are calculated on your device. Location comes from Android, including the fused location provider of Google Play services where available; that is a system component and is not run by this app.</li>
+<li><strong>External services:</strong> only the coordinates described in sections 1(e) and 1(f) can leave your device, and only when the matching feature is on. Trip routes are never sent to any server.</li>
 </ul>
-</section>
-<section>
-<h2>Network Use</h2>
-<p>The app makes the following network requests, and no others:</p>
+<p><strong>Collection Trigger:</strong> Location is accessed while a trip is being recorded or the app is open. Recording uses a foreground service, indicated by a persistent notification. If a Weather widget is on your home screen, it also refreshes about every 30 minutes in the background using your last known location. We do not upload your location history; trips are stored only on your device.</p>
+<h3>b) Sensor Data</h3>
+<p><strong>Types:</strong> Accelerometer, magnetometer, and rotation vector sensors.</p>
+<p><strong>Purpose:</strong> To calculate the compass heading.</p>
+<p><strong>Processing:</strong> This data is processed entirely on your device. It is not stored on external servers or transmitted to us.</p>
+<h3>c) Trip History</h3>
+<p><strong>Purpose:</strong> To let you review past trips, replay them, and see statistics.</p>
+<p><strong>Processing:</strong> Recorded trips, waypoints, and map pins are stored in a local database on your device. They never leave your device unless you export or share them yourself, for example as GPX files, a full backup file, or a shared trip image. Importing a GPX file reads it on the device only.</p>
+<h3>d) Heart Rate &amp; Calories (Optional)</h3>
+<p><strong>Purpose:</strong> If you enable the heart rate feature in Settings, the app can read heart rate, active and total calories, basal metabolic rate, and workout sessions from Health Connect.</p>
+<p><strong>Processing:</strong> This data comes from your watch or fitness band and is stored only with the related trip on your device. The app never sends it anywhere. You can disable the feature or revoke the permissions at any time.</p>
+<h3>e) Network Access &amp; Third-Party Data</h3>
+<p><strong>Purpose:</strong> Internet access is used for the map, weather, speed limits, and the optional license check. The app makes the following requests, and no others:</p>
 <ul>
-<li><strong>Map tiles</strong> - requested from the VersaTiles public tile service. These requests contain only the geographic area visible on the map. They do not include any user or device identifiers.</li>
-<li><strong>Satellite imagery</strong> - if you choose the satellite map style, tiles are requested from Esri's ArcGIS World Imagery service, again only for the visible area.</li>
-<li><strong>Weather data</strong> - when the weather feature is on, the app requests current conditions from Open-Meteo or MET Norway using your coordinates. See the Weather section above.</li>
-<li><strong>Speed limits</strong> - when the speed limit sign is on, the app queries Overpass API servers with approximate coordinates. See the Speed Limit Sign section above.</li>
+<li><strong>Map tiles and fonts</strong> - requested from the VersaTiles public tile service. If you choose the satellite style, imagery is requested from Esri's ArcGIS World Imagery service. These requests contain only the geographic area visible on the map and carry no user or device identifiers. Tiles may be cached on the device.</li>
+<li><strong>Weather</strong> - when the weather feature or widget is on, your coordinates, rounded to four decimal places (about 10 meters), are sent to <a href="https://open-meteo.com">Open-Meteo</a>, or to <a href="https://api.met.no">MET Norway</a> as a fallback. The request contains only latitude and longitude. Both services are free, open, and need no API key or account.</li>
+<li><strong>Speed limits</strong> - when the speed limit sign is on, approximate coordinates, rounded to a grid of about 110 meters, are sent to a public OpenStreetMap data service (<a href="https://overpass-api.de">Overpass API</a>, with <a href="https://overpass.private.coffee">overpass.private.coffee</a> and <a href="https://maps.mail.ru/osm/tools/overpass/">maps.mail.ru</a> as fallbacks). Results are cached on the device for a few minutes. The sign is off by default.</li>
+<li><strong>License</strong> - only after you enter a license key. See section 1(f).</li>
 </ul>
-</section>
-<section>
-<h2>Data Storage</h2>
+<p>All of these services are operated by third parties and can see your IP address like any web server. Links you tap, such as the purchase page or this policy, open in your browser.</p>
+<p><strong>Place names:</strong> To show a place name for a trip or for the weather, the app may use Android's built-in geocoder. On most devices this is a system service that can send the coordinates to the device manufacturer's or Google's location service. It is not run by this app, and it is used only when you open a trip or the weather details.</p>
+<h3>f) Purchase and License (GPS Speedometer+)</h3>
+<p><strong>Purpose:</strong> GPS Speedometer+ is an optional one-time purchase. The app never asks for your email address. The purchase happens on a web page at <a href="https://apps.letqq.mnogod.ru/">apps.letqq.mnogod.ru</a> that opens in your browser. It is run by the developer on a server located in Russia. Seller details are on the <a href="https://apps.letqq.mnogod.ru/contacts">apps.letqq.mnogod.ru/contacts</a> page.</p>
+<p><strong>Data Processed on the Purchase Page:</strong></p>
 <ul>
-<li>Trips, waypoints, and map pins: local database (app-private storage)</li>
-<li>Settings: local Android DataStore</li>
-<li>Heart rate samples: stored with the related trip in the local database</li>
+<li><strong>Email.</strong> You enter it on the purchase page. It is used for the payment receipt, to deliver your license key, and for support, and it is passed to YooKassa, the payment provider.</li>
+<li><strong>Payment.</strong> Payments are processed by YooKassa. You enter card or other payment details on YooKassa's pages, and they never reach the app or our server.</li>
+<li><strong>Stored on our server.</strong> Your email, the order amount, status and dates, the YooKassa payment ID, and your license key, which is kept encrypted. While an order is pending, the server also keeps a keyed hash of your IP address to limit abuse; it is cleared once the order is no longer pending. Raw IP addresses are not stored, and server logs do not contain emails or IP addresses.</li>
+<li><strong>Cookie.</strong> The purchase pages remember the colors of your app theme in a cookie for 30 days, so they match the app.</li>
 </ul>
-<p>Android auto-backup may include this data if you have it enabled. Google's backup is end-to-end encrypted.</p>
-</section>
-<section>
-<h2>Deleting Your Data</h2>
+<p><strong>Data Sent by the App:</strong></p>
 <ul>
-<li>Single trip: open it in History and delete it</li>
-<li>All trips: Settings &gt; Data &gt; Delete all trips</li>
-<li>All map pins: Settings &gt; Data &gt; Delete all waypoints</li>
-<li>Everything: Settings &gt; Data &gt; Press on delete all trips, delete all waypoints, reseat all settings (if you want), or just simply uninstall the app</li>
-<li>Heart rate data: turn the feature off in Settings; existing samples are deleted with their trip</li>
+<li><strong>Entering a key.</strong> The app sends the key and a device identifier to the license server. The identifier is a SHA-256 hash of your Android ID and the system build fingerprint, and the raw values are never sent. The server stores it to tie the key to your device and replies with a signed token, which the app keeps encrypted on your device.</li>
+<li><strong>Re-checking.</strong> About once a week, while the app is in use, it re-validates the token by sending the token and the device identifier.</li>
+<li>If you have not entered a key, the app never contacts the license server.</li>
 </ul>
+<p><strong>Local Storage:</strong> The license token is stored encrypted on your device. The app unlocks features offline using it.</p>
+<h3>g) Crash Logs and Feedback</h3>
+<p><strong>Crash log:</strong> If the app crashes, an error log with the app version, device model, Android version, and the technical error is saved on the device and shown to you on the next launch. It is sent nowhere unless you choose to share it.</p>
+<p><strong>Feedback:</strong> Sending feedback is voluntary. It opens your email app with a draft to <a href="mailto:letqqe@gmail.com">letqqe@gmail.com</a>, and we receive only what you choose to send.</p>
 </section>
 <section>
-<h2>Permissions</h2>
+<h2>2. Permissions</h2>
+<p>The app requests the following permissions. Some are required for core functionality, while others are optional and used only by the feature named:</p>
 <dl>
 <div class="perm"><dt>ACCESS_FINE_LOCATION</dt><dd>Speed, distance, and route while a trip is running</dd></div>
 <div class="perm"><dt>ACCESS_COARSE_LOCATION</dt><dd>Fallback when fine location is unavailable</dd></div>
 <div class="perm"><dt>FOREGROUND_SERVICE, FOREGROUND_SERVICE_LOCATION</dt><dd>Keep trip recording alive in background</dd></div>
 <div class="perm"><dt>POST_NOTIFICATIONS</dt><dd>Trip-in-progress notification (Android 13+)</dd></div>
 <div class="perm"><dt>POST_PROMOTED_NOTIFICATIONS</dt><dd>Optional, show trip status as a promoted live notification (Android 16+)</dd></div>
-<div class="perm"><dt>INTERNET, ACCESS_NETWORK_STATE</dt><dd>Map tiles, weather, and speed limit requests (see Network Use)</dd></div>
+<div class="perm"><dt>INTERNET, ACCESS_NETWORK_STATE</dt><dd>Map tiles, weather, speed limit and license requests (see Network Use)</dd></div>
 <div class="perm"><dt>SYSTEM_ALERT_WINDOW</dt><dd>Optional floating speed gauge</dd></div>
 <div class="perm"><dt>FLASHLIGHT</dt><dd>Optional, flashlight control from the app</dd></div>
 <div class="perm"><dt>WAKE_LOCK, VIBRATE</dt><dd>Keep device awake during tracking; vibrate on speed warnings</dd></div>
 <div class="perm"><dt>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</dt><dd>Optional, prevents system from killing long trips</dd></div>
-<div class="perm"><dt>health.READ_HEART_RATE + related</dt><dd>Optional, read heart rate and calories via Health Connect</dd></div>
+<div class="perm"><dt>health.READ_HEART_RATE</dt><dd>Optional, heart rate from Health Connect</dd></div>
+<div class="perm"><dt>health.READ_ACTIVE_CALORIES_BURNED, health.READ_TOTAL_CALORIES_BURNED, health.READ_BASAL_METABOLIC_RATE</dt><dd>Optional, calories from Health Connect</dd></div>
+<div class="perm"><dt>health.READ_EXERCISE</dt><dd>Optional, workout sessions from Health Connect, used together with heart rate and calories</dd></div>
 </dl>
 </section>
 <section>
-<h2>Children</h2>
-<p>This app is intended for users 18 and older. It does not collect data from anyone, including children. There are no accounts, no messaging, and no content shared with other users.</p>
+<h2>3. Information Sharing and Disclosure</h2>
+<p>We do not sell, rent, or share your personal information with advertisers. To provide the features of the app, specific data is shared with the following service providers, only when you use the matching feature:</p>
+<ul>
+<li><strong>Weather providers</strong> (Open-Meteo, MET Norway): coordinates, to return local conditions.</li>
+<li><strong>Speed limit services</strong> (Overpass API servers): approximate coordinates, to return posted limits.</li>
+<li><strong>Map providers</strong> (VersaTiles, Esri): the visible map area, to return tiles.</li>
+<li><strong>YooKassa</strong>: your email and payment, to process the purchase and issue the receipt.</li>
+<li><strong>Android and Google Play services</strong>: location and place names, as described in section 1.</li>
+<li><strong>Legal requirements:</strong> we may disclose information if required by law or in response to valid requests by public authorities.</li>
+</ul>
 </section>
 <section>
-<h2>Changes</h2>
-<p>If data practices change, this policy will be updated and the date at the top will reflect the change.</p>
+<h2>4. Data Security, Retention, and Deletion</h2>
+<p><strong>Security:</strong> All network requests use HTTPS. The license token is stored encrypted on the device, and license keys are stored encrypted on the server. This page contains no analytics or third-party scripts; when opened from the app it keeps the app's theme colors in your browser's local storage for 30 days.</p>
+<p><strong>Retention:</strong></p>
+<ul>
+<li>Trips, waypoints, map pins, and heart rate samples: local database in app-private storage.</li>
+<li>Settings: local Android DataStore.</li>
+<li>Last location used by the weather widget: on the device.</li>
+<li>Purchase records: on our server, kept as long as needed for support and accounting.</li>
+</ul>
+<p><strong>Backup:</strong> Android auto-backup may include trips, waypoints, and settings if you have it enabled. The license token, widget data, and crash log are excluded. Google's backup is end-to-end encrypted.</p>
+<p><strong>Deletion:</strong></p>
+<ul>
+<li>Single trip: open it in History and delete it.</li>
+<li>Trips, waypoints, tags, and settings: Settings &gt; Data &gt; Select data to delete.</li>
+<li>Everything on the device: uninstall the app.</li>
+<li>Heart rate data: turn the feature off in Settings; existing samples are deleted with their trip.</li>
+<li>Purchase data on the server: write to <a href="mailto:letqqe@gmail.com">letqqe@gmail.com</a>. Records that must be kept for accounting may be retained.</li>
+</ul>
 </section>
 <section>
-<h2>Contact</h2>
+<h2>5. Speed &amp; Safety Disclaimer</h2>
+<p>GPS Speedometer is a software tool that relies on your device's GPS and on third-party map data.</p>
+<ul>
+<li><strong>Approximate readings:</strong> speed, distance, and speed limit information can be inaccurate or delayed, especially with a weak GPS signal. Always follow posted signs and your vehicle's own instruments.</li>
+<li><strong>Stay attentive:</strong> do not operate the app while driving where it could distract you.</li>
+</ul>
+</section>
+<section>
+<h2>6. Children's Privacy</h2>
+<p>The Service is intended for users 18 and older and is not directed at children. It does not knowingly collect data from children. There are no accounts, no messaging, and no content shared with other users. If you are a parent or guardian and believe a child has provided personal information, please contact us.</p>
+</section>
+<section>
+<h2>7. No Tracking or Profiling</h2>
+<p>GPS Speedometer does not include:</p>
+<ul>
+<li>advertising identifiers or ad SDKs</li>
+<li>analytics, telemetry, or third-party crash reporting</li>
+<li>behavioral profiling or targeted advertising</li>
+<li>cross-app tracking</li>
+<li>access to your contacts, photos, microphone, or camera</li>
+</ul>
+<p>Most data used by the app is processed on the device and stays there.</p>
+</section>
+<section>
+<h2>8. Changes to This Privacy Policy</h2>
+<p>If data practices change, we will update this policy, and the date at the top will reflect the change.</p>
+</section>
+<section>
+<h2>9. Contact Us</h2>
 <p>This is an independent app by letqq. For questions about this policy, contact <a href="mailto:letqqe@gmail.com">letqqe@gmail.com</a>.</p>
 </section>
 </main>
